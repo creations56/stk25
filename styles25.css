@@ -1,0 +1,259 @@
+body{
+	background-color:#aaaaaa;
+	text-align: center;
+	font-size: 20px;
+	touch-action: manipulation;/*supprime double touche pour zoomer*/
+}
+
+h1{
+	font-size: 20px; 
+	color: #505050;
+	padding: 0px;
+	margin: 0px;
+}
+
+a{
+  color: #eeeeee;
+}
+
+.cadre {
+ width:470px;
+ text-align: center;
+ background-color: #505050;
+ justify-content: center;/*centrage dans la boite*/
+ display: grid;
+ margin: 0 auto; /* centrage de la boite */ 
+ grid-template-columns: repeat(7,60px);
+ grid-gap: 5px;
+ grid-auto-rows: minmax(20px, auto);/* hauteur des lignes*/
+ border: 2px solid #ffffff;
+ border-radius: 10px; 
+}
+
+/*zone des affichages*/
+
+.a{ /* caracteristiques communes aux affichages */
+  background-color: rgb(255,255,240);
+  padding-right: 10px;
+  text-align: right;
+  
+  border: 1px solid rgb(0,0,0);
+  border-radius: 5px;
+}
+.a1{/* caracteristiques affichage nom calculatrice */
+  background-color: transparent;
+  padding-right: 10px;
+  text-align: center;
+}
+.a2{/* caracteristiques affichage modes */
+  background-color: transparent;
+  text-align: center;
+}
+
+#amem {
+  grid-column: 1/5;
+  grid-row: 1;
+  margin-top: 5px;
+  height: 50px; /* compenser le top-margin */
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#apile2 { 
+  grid-column: 1/5;
+  grid-row: 2;
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#apile1 {
+  grid-column:1/5;
+  grid-row: 3;
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#apile0 {
+  grid-column: 1/5;
+  grid-row: 4;
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#ainput {
+  grid-column: 1/5;
+  grid-row: 6;
+  background-color: rgb(255,255,255);/*remplace valeur de la class*/
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#ainfo {
+  grid-column: 5/8;
+  grid-row: 4;
+  text-align: center; /*remplace valeur de la class*/
+  background-color: transparent;/*remplace valeur de la class*/
+  color:red;
+  font-size: 16px;/*remplace valeur de la class*/
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#astk{ 
+  grid-column: 6/8;/*initial 8*/
+  grid-row: 11;/* initial 15*/
+  vertical-align:middle;
+  line-height: 30px; /* pour que vertical-align fonctionne */
+  border: 0px;
+  font-size: 16px;
+  font-style: italic;
+  color: white;  
+}
+#adegrad {
+  grid-column: 5;
+  grid-row: 3;
+  text-align: center; /*remplace valeur de la class*/
+  background-color: transparent;/*remplace valeur de la class*/
+  color: #63FF33;
+  font-size: 16px;/*remplace valeur de la class*/
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#afixsci {
+  grid-column: 6;
+  grid-row: 3;
+  text-align: center; /*remplace valeur de la class*/
+  background-color: transparent;/*remplace valeur de la class*/
+  color: #63FF33;
+  font-size: 16px;/*remplace valeur de la class*/
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+#adplusmoins {
+  grid-column: 7;
+  grid-row: 3;
+  text-align: center; /*remplace valeur de la class*/
+  background-color: transparent;/*remplace valeur de la class*/
+  color: #63FF33;
+  font-size: 16px;/*remplace valeur de la class*/
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */
+}
+
+/*zones des etiquettes affichage*/
+
+.e{
+  /* caracteristiques communes aux etiquettes*/
+  font-size: 16px;
+  text-align:left;
+  padding-left: 5px;;
+}
+#ex{
+  grid-column: 1;
+  grid-row: 4;
+}
+#ey{
+  grid-column: 1;
+  grid-row:3;
+}
+#ez{
+  grid-column: 1;
+  grid-row:2;
+}
+#emem{
+  grid-column: 1;
+  grid-row:1;
+}
+#einput{
+  grid-column: 1;
+  grid-row:6;
+}
+
+/*zone des boutons*/
+
+button{
+  /* concerne tous les boutons*/
+  font-size: 16px;  /* min 16 pour eviter zoom auto sur IPhone*/
+  font-weight: bold;
+  justify-content: center;
+  height: 50px;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  padding: 0px;
+}
+.bgris{
+  /*concerne les boutons gris*/
+  background: linear-gradient(to bottom,#999999, #666666);
+  color: white;
+}
+.bbleu{
+  /*concerne les boutons bleus*/
+  background: linear-gradient(to bottom,#e6f0ff, #4d94ff);
+  color: black;
+}
+.bblanc{
+  /*concerne les boutons blancs*/
+  background: linear-gradient(to bottom,#ffffff, #999999);
+  color: black;
+}
+#bdeg{grid-column: 5;grid-row: 1; 
+  margin-top: 5px;
+  height: 50px; /* compenser le top-margin */
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */}
+#brad{grid-column: 5;grid-row: 2;}
+#bfix{grid-column: 6;grid-row: 1;
+  margin-top: 5px;
+  height: 50px; /* compenser le top-margin */
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */}
+#bsci{grid-column: 6;grid-row: 2;}
+#bdplus{ grid-column: 7;grid-row: 1;
+  margin-top: 5px;
+  height: 50px; /* compenser le top-margin */
+  vertical-align:middle;
+  line-height: 50px; /* pour que vertical-align fonctionne */}
+#bdmoins{grid-column: 7;grid-row: 2;}
+/*#bcrst{grid-column: 8;grid-row: 7;color: rgb(255,200,200); */
+
+#bsin{grid-column: 1;grid-row: 5;}
+#bcos{grid-column: 2;grid-row: 5;}
+#btan{grid-column: 3;grid-row: 5;}
+#blog{grid-column: 4;grid-row: 5;}
+#bln{grid-column: 5;grid-row: 5;}
+#bsqrt{grid-column: 6;grid-row:5;}
+#binv{grid-column: 7;grid-row: 5;}
+
+#basin{grid-column: 1;grid-row: 6;}
+#bacos{grid-column: 2;grid-row: 6;}
+#batan{grid-column: 3;grid-row: 6;}
+#bpwr{grid-column: 4;grid-row: 6;}
+#bexp{grid-column: 5;grid-row: 6;}
+#bx2{grid-column: 6;grid-row: 6;}
+#bchs{grid-column: 7;grid-row: 6;}
+
+#b7{grid-column: 1;grid-row: 7;}
+#b8{grid-column: 2;grid-row: 7;}
+#b9{grid-column: 3;grid-row: 7;}
+#bc{grid-column: 4;grid-row: 7;color: rgb(255,100,100); /*remplace la class*/}
+#bcstk{grid-column: 5;grid-row: 7;color: rgb(255,200,200); /*remplace la valeur class*/}
+#bswap{grid-column: 6;grid-row: 7}
+#bplus{grid-column: 7;grid-row: 7;background: linear-gradient(to bottom, #66a3ff, #0047b3);color:white; /*remplace la valeur class*/}
+
+#b4{grid-column: 1;grid-row: 8;}
+#b5{grid-column: 2;grid-row: 8;}
+#b6{grid-column: 3;grid-row: 8;}
+#bac{grid-column: 4;grid-row: 8;color: rgb(255,100,100); /*remplace la valeur class*/}
+#bdup{grid-column: 6;grid-row: 8;}
+#bsto{grid-column: 5;grid-row: 8;}
+#bminu{grid-column: 7;grid-row: 8;background: linear-gradient(to bottom, #66a3ff, #0047b3);color:white; /*remplace la valeur class*/}
+
+#b1{grid-column: 1;grid-row: 9;}
+#b2{grid-column: 2;grid-row: 9;}
+#b3{grid-column: 3;grid-row: 9;}
+#bmoins{grid-column: 4;grid-row: 9;)}
+#bdrop{grid-column: 6;grid-row: 9;}
+#brcl{grid-column: 5;grid-row: 9;}
+#bmul{grid-column: 7;grid-row: 9;background: linear-gradient(to bottom, #66a3ff, #0047b3); color:white;/*remplace la valeur class*/}
+
+#b0{grid-column: 1;grid-row: 10;} /*margin-bottom: 5px;
+  height: 50px;compenser le top-margin ajout marge inferieure de 5pixelssur la ligne du bas*/
+#bpoint{grid-column: 2;grid-row: 10;}
+#be{grid-column: 3;grid-row: 10;}
+#benter{grid-column: 5/7;grid-row: 10;}
+#bpi{grid-column: 4;grid-row: 10;background: linear-gradient(to bottom,#ffffff, #999999);color: black;}/*remplace la couleur gris par blanc*/
+#bdiv{grid-column: 7;grid-row: 10;background: linear-gradient(to bottom, #66a3ff, #0047b3);color:white; /*remplace la valeur class*/}

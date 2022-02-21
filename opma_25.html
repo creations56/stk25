@@ -1,0 +1,164 @@
+<!-- <!DOCTYPE html> -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>STK 35II instructions for use</title>
+    
+<style>
+body {
+  text-align: left;
+  font-size: 20px;
+  line-height: 35px;
+}
+.gris{
+  background-color: #dddddd;
+  padding: 10px;
+}
+.centered{
+  text-align: center;
+}
+.left{
+  text-align: left;
+}
+em{
+  color: #444444;
+}
+.cg{ border: 1px solid black; border-radius: 5px; padding: 5px;font-weight: bold ; background-color: #888888 ; color: #ffffff;}
+.cb{ border: 1px solid black; border-radius: 5px; padding: 5px;font-weight: bold ; background-color: #5555ff ; color: #ffffff;}
+.cw{ border: 1px solid black; border-radius: 5px; padding: 5px;font-weight: bold ; background-color: #ffffff ; color: #000000;}
+</style>
+</head>
+
+<body>
+  
+<div class="centered">
+    <h2> 
+      STK 35II an online RPN calculator<br>
+      <br>
+      <a href="index.html">STK 35II</a>
+      <br><br>
+      
+    </h2>
+    
+ <img src="images/stk35II.png" alt="Stack35" width="300"/>
+</div>
+
+<div class='left'>
+the calculator consist of :
+<ul>
+ <li>7 displays screens </li> 
+ <li>48 keys</li> 
+ <li>a link, below the "casing" to this instructions for use page. </li>
+</ul>
+It does mathematical calculations using the Reverse Polish Notation (RPN), which has been widely implemented in the Hewlett Packard calculators' starting in the 1970's.<br>
+This means that it uses a "calculation stack" (registers referenced as <em>x, y, z</em>) to execute the operations.
+Entering a number in the stack is done in two steps: using the number keys (the white ones) to set the number in the <em>input</em> register then, with the <span class="cg">ENTER</span> key, pushing this number to the first level of the calculation stack, that is to say the <em>x</em> register.<br /><br />
+</div>
+
+<div class='gris'>
+Example: adding 4.5 to 3.8
+<ul>
+  <li> with the white keys, tap in <span class='cw'>3</span> <span class='cw'>.</span> <span class='cw'>8</span>which displays in the "input" register.
+    <li>tap the <span class='cg'>ENTER</span> key. The content of the input register is moved to the <em>x</em> register (calculation stack)</li>
+      <li> with the white keys again, tap in <span class='cw'>4</span> <span class='cw'>.</span>  <span class='cw'>5</span>which displays in the <em>input</em> display.
+     <li>tap the  <span class='cg'>ENTER</span>  key again. The value of the x register is moved up to the y register and the content of the <em>input</em> register is moved to the x register. We have now 3.8 in the y register and 5.5 in the x register </li>   
+     <li>tap the <span class="cb">+</span> key (a blue one). The y register is added to the x one which now displays the 8.3 value</li>
+</ul>
+Notice : if you tap directly the <span class='cb'>+</span> key after entering the second value (skipping the second <span class='cg'>ENTER</span> key), the calculator will perform the entering step automatically. This will speed up the process.
+</div>
+
+
+<h2>The display area</h2>
+
+<div class='centered'>
+   <img src="images/display2.png" alt="display" width="80%"/>
+</div>
+<div class='left'>
+  
+  There are 7 displays grouped in 4 main areas:
+  <ul>
+    <li>the stack area includes the calculation registers named <em>x, y, z</em> and the memory register named <em>mem</em></li>
+    <li>the <em>input</em> area is used to enter a new number, using the "white keys" (see below key pad)</li>
+    <li>the <em>results</em> area shows the last 15 operations done by the calculator </li>
+    <li>The <em>modes</em> area shows by default the angle mesurement unit (radian / degrees) and the display mode (fixed or scientific, number of decimales). When needed it also shows a temporary warning message. </li>
+  </ul>  
+</div>
+
+
+<h2>The keyboard area</h2>
+
+<div class='centered'>
+   <img src="images/keyboard2.png" alt="keyboard" width="80%"/>
+</div>
+<div class='left'>
+  
+  There are 48 keys grouped in 3 main categories:
+  <ul>
+    <li>the white keys, including the figures from 0 to 9, the decimal point, the minus sign... that is to says the ones used to enter a new number</li>
+    <li>the grey keys which are related to stack and memory manipulations, display modes... </li>
+    <li>the blue keys which are used to perform mathematical operations </li>
+  </ul>
+</div>
+
+<div class='left'>
+  <h3>The white keys</h3>
+  <span class='cw'>0</span> to <span class='cw'>9</span></span> numbers<br />
+  <span class='cw'>.</span> decimal point<br />
+  <span class='cw'>-</span> minus sign, used to enter negative numbers or a negative exponent. Example : -123 or 456E-3. It should not be confused with the mathematical operation minus, which substact one number to an other one.<br />
+  <span class='cw'>E</span> exponent sign <br />
+  <span class='cw'>C</span> for clear. Remove the last entered sign from the input register<br />
+  <span class='cw'>AC</span> for all clear. Erase the input register 
+</div>
+
+<div class='left'>
+  <h3>The grey keys</h3>
+  <span class='cg'>ENTER</span> move the current value from the <em>input</em> register to the first level of the stack, x, and erase the <em>input</em> register<br />
+  <span class='cg'>PI</span> enter the mathematical Pi value into the x register<br />
+  <span class='cg'>STO</span> for store. The current x value is stored in the memory register. <br />Notice that, if a value is set in the input register, it will be moved to the x ones, then stored to the memory.<br />Storing a value in the memory doesn't erase it from the x register<br />
+   <span class='cg'>RCL</span> for recall. The stack is moved up and the current memory value is stored in the x register.<br />Notice: recalling a value from memory doesn't erase it from the memory register<br />
+  <span class='cg'>DUP</span> for duplicate the x register. y is moved to z, and y is set to x <br /> 
+  <span class='cg'>DROP</span> for dropping. The stack is moved down: x is set to y ,y is set to z. z is set to 0. Notice that the original x value is lost<br />
+  <span class='cg'>SWAP</span> for swap. The values of the x register and the y one are exchanged<br />
+  <span class='cg'>CSTK</span> for clear stack. All stack registers and the memory register are set to 0<br />
+  <span class='cg'>DEG</span> for degree. All trigonometric calculations will be done using the degree unit<br />
+  <span class='cg'>RAD</span> for radian. All trigonometric calculations will be done using the radian unit<br />
+  <span class='cg'>D+</span> for decimal +. Increase the number of displayed decimals by one. Notice that the number of decimals is limited to 8<br />
+  <span class='cg'>D-</span> for decimal -. Decrease the number of displayed decimals by one. Notice that the minimum number of decimals is 0<br />
+  <span class='cg'>FIX</span> for fixed mode. Set the fixed mode where numbers are represented directly, without exponent.<br />Notice : some numbers, big ones, or with lot of displayed decimals, could be to large to be displayed (more than 16 characters). When this happen the calculator will automatically move to the scientific mode. A warning message will be displayed in the info display<br/>
+  <span class='cg'>SCI</span> for scientific mode. Number are displayed with a mantissa and an exponent. Example: 123.45 is displayed as 1.23e+2<br />
+  <span class='cg'>CRST</span> for clear results. This will clear the results display. New display will start with the <strong>CRST</strong> command and the last x value<br />
+</div>
+<div class='gris'>
+Notice : in order to speed up the data entry into the stack, if a number is set in the <em>input</em> register, when the <span class='cg'>STO</span> key is tapped, the <em>input</em> register value will be moved to the <em>x</em> register, then copied to the <em>mem</em> register. The <span class='cg'>ENTER</span> key is therefore optional in this case.<br />
+Example : <span class='cw'>1</span> <span class='cw'>2</span> <span class='cw'>3</span> <span class='cw'>.</span> <span class='cw'>4</span> <span class='cw'>5</span> <span class='cg'>STO</span> is equivalent to <span class='cw'>1</span> <span class='cw'>2</span> <span class='cw'>3</span> <span class='cw'>.</span> <span class='cw'>4</span> <span class='cw'>5</span> <span class='cg'>ENTER</span> <span class='cg'>STO</span> <br />
+This is also the case for all the following mathematical operations keys, the blue keys.<br />
+Example : <span class='cw'>3</span> <span class='cw'>4</span> <span class='cw'>.</span> <span class='cw'>2</span> <span class='cb'>+</span> is equivalent to <span class='cw'>3</span> <span class='cw'>4</span> <span class='cw'>.</span> <span class='cw'>2</span> <span class='cg'>ENTER</span> <span class='cb'>+</span><br />
+
+</div>
+
+<div class='left'>
+   <h3>The blue keys</h3>
+   <span class='cb'>+</span> for plus. x is replaced by x + y. y is replaced by z. z is set to 0<br/>
+   <span class='cb'>-</span> for minus. x is replaced by y-x. y is replaced by z. z is set to 0.  <br />
+   <span class='cb'>x</span> for multiplication. x is replaced by x * y. y is replaced by z. z is set to 0.<br />Notice: if the results exceed the maximum number accepted by the calculator, which is 9.99999999 e+99, a warning is set in the info display and the operation is not done<br />
+   <span class='cb'>/</span> for division. x is replaced by y/x. y is replaced by z. z is set to 0. <br />Notice: if x is equal to 0, a warning is set in the info display and the operation is not done<br />
+   <span class='cb'>INV</span> for inverse function. x is replaced by 1/x <br />
+   <span class='cb'>CHS</span> for change sign. x is replaced by -x <br />
+   <span class='cb'>SIN</span> for sinus. x is replaced by sinus(x). If the <strong>DEG</strong> mode is set, x will be considered in degrees. If the <strong>RAD</strong> mode is set, x will be considered in radians<br />
+   <span class='cb'>COS</span> for cosinus. x is replaced by cosinus(x). If the <strong>DEG</strong> mode is set, x will be considered in degrees. If the <strong>RAD</strong> mode is set, x will be considered in radians<br />
+   <span class='cb'>TAN</span> for tangent. x is replaced by tangent(x). If the <strong>DEG</strong> mode is set, x will be considered in degrees. If the <strong>RAD</strong> mode is set, x will be considered in radians<br /> Notice: if x is equal to +90 degrees or -90 degrees (+pi/2 or -pi/2 in radians) a warning is set in the info display and the operation is not done<br />
+   <span class='cb'>ASIN</span> for arcsinus. x is replaced by arcsinus(x). The result value will be in degrees if the <strong>DEG</strong> mode is set, in radians if the <strong>RAD</strong> mode is set.<br />Notice: if x > 1 or x < -1  a warning is set in the info display and the operation is not don.<br />
+   <span class='cb'>ACOS</span> for arccos. x is replaced by arccosinus(x). The result value will be in degrees if the <strong>DEG</strong> mode is set, in radians if the <strong>RAD</strong> mode is set.<br />Notice: if x > 1 or x < -1  a warning is set in the info display and the operation is not done.<br />
+   <span class='cb'>ATAN</span> for arctangent. x is replaced by arcsinus(x). The result value will be in degrees if the <strong>DEG</strong> mode is set, in radians if the <strong>RAD</strong> mode is set.<br />
+   <span class='cb'>LOG</span> for logarithm to base 10. x is replaced by logarithm(x) in base 10.<br />Notice: if x = 0 or x < 0, a warning is set in the info display and the operation is not done.<br />
+   <span class='cb'>PWR</span> for power. x is replaced by x power y. y is replaced by z. z is set to 0. <br />Notice: if the results exceed the maximum number accepted by the calculator, which is 9.99999999 e+99, a warning is set in the info display and the operation is not done <br />
+   <span class='cb'>LN</span> for neper logarithm. x is replaced by neper logarithm(x).<br />Notice: if x = 0 or x < 0,  a warning is set in the info display and the operation is not done<br />
+   <span class='cb'>EXP</span> for exponential. x is replaced by e power x. y is replaced by z. z is set to 0. <br />Notice: if the results exceed the maximum number accepted by the calculator, which is 9.99999999 e+99, a warning is set in the info display and the operation is not done <br />
+    <span class='cb'>SQRT</span> for square root. x is replaced by square root(x).<br />Notice: if x < 0, a warning is set in the info display and the operation is not done <br />
+    <span class='cb'>X2</span> for x square. x is replaced by square(x).<br />Notice: if the results exceed the maximum number accepted by the calculator, which is 9.99999999 e+99, a warning is set in the info display and the operation is not done <br />   
+</div>
+<br />
+v2.0
+</body>
+</html>
