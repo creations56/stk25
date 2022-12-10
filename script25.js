@@ -224,11 +224,12 @@ function boutonGris(x){
   let flagR=true; // affichageResults
   let r=0;
   if (x==='ENTER'){fEnter();flagR=false};// fEnter affiche deja results
-  if (x==='PI'){affichageInput('');fUp();pile0=Math.PI}
+  if (x==='PI'){fEnter();fUp();pile0=Math.PI}
   if (x==='DROP'){fDown()}
   if (x==='DUP'){fUp();pile0=pile1}
   if (x==='STO'){fEnter();mem=pile0}
-  if (x==='RCL'){affichageInput('');fUp();pile0=mem}
+  //if (x==='RCL'){affichageInput('');fUp();pile0=mem}
+  if (x==='RCL'){fEnter();fUp();pile0=mem}
   if (x==='SWAP'){r=pile0;pile0=pile1;pile1=r}
   if (x==='CSTK'){pile0=0;pile1=0;pile2=0;mem=0} 
   if (x==='DEG'){degrad='DEG'} 
