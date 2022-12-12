@@ -24,7 +24,7 @@ let titreBouton='',
   ope=[], // ?
   posentree='vide',
   entree='',// affichage de l'entree
-  listWarning=['large number, SCI mode set','unvalid operation','unvalid operation'];
+  listWarning=['large number, SCI mode set','unvalid operation','unvalid operation','\u24D8 hh.mmss display for x'];
 
 // lecture des affichages et des boutons
 
@@ -58,6 +58,14 @@ document.querySelectorAll('.bbleu').forEach(item => {
     const {target} = event;
 	titreBouton=target.textContent;
 	boutonBleu(titreBouton);
+  })
+});
+
+document.querySelectorAll('.bjaune').forEach(item => {
+  item.addEventListener('click', event => {    
+    const {target} = event;
+	titreBouton=target.textContent;
+	boutonJaune(titreBouton);
   })
 });
 
@@ -141,6 +149,12 @@ function testposentree(z){ // evalue posentree en fonction de entree
     else {posentree='exp3'}
   }
   if (z.length>14) {posentree='full'} // 15 caracteres 
+}
+
+function frac(x) {
+  let y=parseFloat(x); //converti en nombre si besoin
+  y= y-Math.floor(y);
+  return y;
 }
 
 function boutonBlanc(x) {
@@ -343,7 +357,63 @@ function boutonBleu(x){
   
   affichagePile(); // attention affichage doit etre avant fResults cause fixsci
   if (flagR===true){affichageResults(x);}
-} // fin de boutonGris
+} // fin de boutonBleu
+
+function boutonJaune(x){
+  // gestion des touches jaunes, conversions
+  let flagR=true; // affichageResults
+  let r=0; // valeur intermediaire
+  if (x==='/'){
+    fEnter();
+    r=pile1/pile0;
+    if (isNaN(r)) {warning=listWarning[1];flagR=false}
+    else if (Math.abs(r)>maxNumber) {warning=listWarning[2];flagR=false}
+    else {pile1=r;fDown()}
+  }
+  if (x==='dec>hms'){
+    fEnter();// fait entree si pas fait par l'utilisateur
+    let h=0;
+    let m=0;
+    let s=0;
+    let x=pile0;
+    h=Math.floor(x);
+    x=frac(x)*60; // pour les minutes
+    m=Math.floor(x);
+    x=frac(x)*60;// pourles secondes
+    s=Math.round(x); // arrondi
+    pile0=h+m/100+s/10000;
+    fixsci='FIX'; // passage a l'affichage fix 4 decimales
+    decimales=4;   
+    warning= listWarning[3];
+    }
+ 
+ if (x==='hms>dec'){ // de hh.mmss vers decimale
+    fEnter();
+    let h=0;
+    let m=0;
+    let s=0;
+    let x=pile0;
+    let texte=x.toString();// analyser x comme un texte pour eviter les pbs d'arrondi
+    // completer texte avec des 0 si necessaire
+    let pos = texte.indexOf('.');// position du point
+    if (pos==-1) texte = texte + '.0000'; // pas de point
+    else {
+        var integer = texte.substring(0,pos);
+        var decimals = texte.substring(pos+1);
+        while(decimals.length<4) decimals=decimals+'0';
+        texte = integer+'.'+decimals;
+    }
+    // 
+    h=Math.floor(x);// partie entiere 
+    m=parseInt(texte.substring(pos+1, pos+3));
+    s=parseInt(texte.substring(pos+4, pos+6));
+    pile0=h+m/60+s/3600;
+  }
+  
+    affichagePile(); // attention affichage doit etre avant fResults cause fixsci
+  if (flagR===true){affichageResults(x);}
+} // fin de boutonJaune
+
 
 // lancement du script
 
